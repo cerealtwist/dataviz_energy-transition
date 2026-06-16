@@ -1,0 +1,375 @@
+
+<h2 class="sr-only">Dibalik Bayang-Bayang Transisi — cerita data interaktif transisi energi Indonesia</h2>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+#story{font-family:var(--font-sans),'Inter',sans-serif;color:var(--color-text-primary)}
+.opening{padding:2.5rem 2rem 1rem;max-width:560px}
+.kicker{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:.6rem}
+.big-title{font-size:30px;font-weight:500;line-height:1.28;margin:.5rem 0}
+.lead{font-size:13.5px;line-height:1.7;color:var(--color-text-secondary);margin-top:.5rem}
+.scroll-hint{display:flex;align-items:center;gap:8px;margin-top:1.25rem;font-size:11px;color:var(--color-text-tertiary);letter-spacing:.06em}
+.scrolly{position:relative}
+.sticky-g{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--color-background-primary);z-index:1;border-bottom:.5px solid var(--color-border-tertiary)}
+.sticky-g svg{width:100%;max-width:560px;height:360px}
+.chart-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:.5rem;text-align:center}
+.step{height:88vh;display:flex;align-items:center;padding:0 1.5rem;position:relative;z-index:2;pointer-events:none}
+.sc{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.1rem 1.3rem;max-width:295px;pointer-events:all;transition:box-shadow .3s}
+.sc.active{box-shadow:0 0 0 1px var(--color-border-secondary)}
+.sc .n{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:.4rem}
+.sc p{font-size:13px;line-height:1.65;color:var(--color-text-primary)}
+.sc .em{font-weight:500}
+.prose{padding:2rem 2rem .5rem;max-width:580px;margin:0 auto}
+.prose h2{font-size:17px;font-weight:500;margin-bottom:.3rem}
+.prose .sub{font-size:11.5px;color:var(--color-text-secondary);line-height:1.6}
+.cw{padding:.5rem 2rem 2rem}
+.sol{background:var(--color-background-secondary);padding:2rem;margin-top:.5rem}
+.sol .inn{max-width:560px;margin:0 auto}
+.sol h2{font-size:17px;font-weight:500;margin-bottom:.25rem}
+.sol .sub{font-size:11.5px;color:var(--color-text-secondary);margin-bottom:1rem}
+.pils{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:.75rem}
+.pil{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.9rem}
+.pil .pi{font-size:17px;margin-bottom:.45rem;color:var(--color-text-secondary)}
+.pil .pt{font-size:11.5px;font-weight:500;margin-bottom:.3rem}
+.pil .pp{font-size:10.5px;color:var(--color-text-secondary);line-height:1.55}
+.poff{margin-top:.9rem;background:#173404;border-radius:var(--border-radius-lg);padding:1.5rem;text-align:center}
+.poff .pl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#97C459;opacity:.7;margin-bottom:.5rem}
+.poff .pn{font-size:18px;font-weight:500;color:#C0DD97;line-height:1.4;margin-bottom:.3rem}
+.poff .ps{font-size:11px;color:#97C459;opacity:.65}
+.srcs{padding:1.25rem 2rem;font-size:10px;color:var(--color-text-tertiary);line-height:1.95;border-top:.5px solid var(--color-border-tertiary)}
+</style>
+
+<div id="story">
+  <div class="opening">
+    <p class="kicker">SATRIA DATA 2026 · Statistics Infographic Competition</p>
+    <h1 class="big-title">Dibalik Bayang-Bayang Transisi</h1>
+    <p class="lead">Menelusuri jejak manfaat dan bayang-bayang yang ditinggalkan transisi energi Indonesia — serta siapa yang sesungguhnya menanggung bebannya.</p>
+    <p class="scroll-hint"><i class="ti ti-arrow-down" aria-hidden="true"></i> Gulir untuk menelusuri cerita</p>
+  </div>
+
+  <div class="scrolly" id="scrolly">
+    <div class="sticky-g">
+      <p class="chart-label" id="chart-label">Bauran Listrik Indonesia, 2022</p>
+      <svg id="mc" viewBox="0 0 560 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Visualisasi data transisi energi Indonesia yang berubah sesuai narasi"></svg>
+    </div>
+    <div class="step" data-step="0"><div class="sc"><p class="n">01 · 08 — Fondasi Energi</p><p>Pada 2022, <span class="em">62,5% listrik Indonesia</span> masih bersumber dari batu bara. Energi baru terbarukan hanya menyumbang 5,6%.</p></div></div>
+    <div class="step" data-step="1"><div class="sc"><p class="n">02 · 08 — Skala Produksi</p><p>Indonesia adalah <span class="em">produsen batu bara terbesar ke-3 di dunia</span> setelah China dan India — dengan 836 juta ton pada 2024.</p></div></div>
+    <div class="step" data-step="2"><div class="sc"><p class="n">03 · 08 — Rekor Historis</p><p><span class="em">836,13 juta ton</span> batu bara diproduksi hanya pada 2024 — rekor tertinggi sepanjang sejarah Indonesia.</p></div></div>
+    <div class="step" data-step="3"><div class="sc"><p class="n">04 · 08 — Risiko Batubara</p><p>Phase-out batubara mengancam <span class="em">1,61 juta lapangan kerja</span> di 5 provinsi utama — termasuk dampak pengganda rantai pasok.</p></div></div>
+    <div class="step" data-step="4"><div class="sc"><p class="n">05 · 08 — Risiko Otomotif</p><p>Sektor otomotif konvensional menambah <span class="em">1,5 juta pekerja lagi</span> yang terancam terdisrupsi oleh transisi menuju kendaraan listrik.</p></div></div>
+    <div class="step" data-step="5"><div class="sc"><p class="n">06 · 08 — Indeks Kerentanan</p><p><span class="em">Kalimantan Timur</span> paling rentan (IKT 1,00): PDRB bisa susut 45,79% dan 490 ribu pekerjaan terancam jika tambang tutup mendadak.</p></div></div>
+    <div class="step" data-step="6"><div class="sc"><p class="n">07 · 08 — Ketimpangan Infrastruktur</p><p><span class="em">80,5% target SPKLU 2030</span> dialokasikan untuk Jawa. Kalimantan — penghasil 83% batubara nasional — hanya mendapat 3,1%.</p></div></div>
+    <div class="step" data-step="7"><div class="sc"><p class="n">08 · 08 — Pertanyaan Keadilan</p><p>Ini bukan sekadar transisi energi. Ini adalah pertanyaan tentang <span class="em">keadilan pembangunan</span> — siapa yang menanggung beban, dan siapa yang menikmati manfaat.</p></div></div>
+  </div>
+
+  <div class="prose">
+    <h2>Indeks Kerentanan Transisi per Provinsi</h2>
+    <p class="sub">Normalisasi min-max pada dua indikator: kontraksi PDRB (%) dan proyeksi kehilangan tenaga kerja. Analisis IRIO berbasis Tabel I-O BPS 2021 & 2023 (IISD, November 2025).</p>
+  </div>
+  <div class="cw"><svg id="pc" width="100%" height="265" role="img" aria-label="Bagan batang horizontal: kehilangan pekerjaan per provinsi, diwarnai berdasarkan indeks kerentanan transisi"></svg></div>
+
+  <div class="prose">
+    <h2>Target SPKLU 2030 per Wilayah</h2>
+    <p class="sub">Kepmen ESDM No. 24K/TL.01/MEM.L/2025 tentang Roadmap SPKLU 2025–2030. Total nasional: 62.918 unit.</p>
+  </div>
+  <div class="cw"><svg id="sc2" width="100%" height="215" role="img" aria-label="Bagan batang horizontal: target SPKLU 2030 per wilayah, menunjukkan dominasi Pulau Jawa"></svg></div>
+
+  <div class="sol">
+    <div class="inn">
+      <h2>Dari bayang-bayang menuju cahaya</h2>
+      <p class="sub">Tiga pilar transisi energi yang berkeadilan (just transition)</p>
+      <div class="pils">
+        <div class="pil"><div class="pi"><i class="ti ti-school" aria-hidden="true"></i></div><p class="pt">Reskilling & Jaring Sosial</p><p class="pp">Redesain Kartu Prakerja untuk green skills. Perluas BPJS-JKP ke pekerja informal. Transition Fund dari redistribusi DBH-SDA batubara.</p></div>
+        <div class="pil"><div class="pi"><i class="ti ti-battery-charging" aria-hidden="true"></i></div><p class="pt">Hilirisasi Nikel → Baterai</p><p class="pp">Tingkatkan porsi nikel untuk baterai: 17% → 30% pada 2028. Bangun green jobs di Sulawesi & Maluku, bukan hanya di Jawa.</p></div>
+        <div class="pil"><div class="pi"><i class="ti ti-map-pin" aria-hidden="true"></i></div><p class="pt">Pemerataan Infrastruktur</p><p class="pp">Tegakkan rasio 5:1 & 12:1 SPKLU. Stimulus hijau ke 5 provinsi IKT tertinggi. Sinkronisasi RUED daerah dengan insentif EBT nasional.</p></div>
+      </div>
+      <div class="poff">
+        <p class="pl">Proyeksi Skenario 3 — Green Sector Stimulus · IISD, 2025</p>
+        <p class="pn">1,61 juta pekerjaan hilang → 8,46 juta pekerjaan hijau baru</p>
+        <p class="ps">Rasio 1 : 5,2 — setiap 1 pekerjaan tambang yang hilang, 5 pekerjaan hijau bisa tercipta dengan stimulus yang tepat</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="srcs">
+    <strong>Sumber data:</strong> IISD (Nov 2025) Coal Transition Impacts Indonesia (IRIO-BPS) · Kepmen ESDM No. 24K/2025 Roadmap SPKLU 2025-2030 · CREA-CELIOS (Apr 2026) Nikel Indonesia · Analisis Strategis Transisi Industri Otomotif Indonesia (2025) · Kementerian ESDM RI & CNBC Indonesia (RUPTL 2025-2034)
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const dk = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const C = {
+  green:  dk ? '#97C459' : '#3B6D11',
+  grnLt:  dk ? '#5F5E5A' : '#D3D1C7',
+  textP:  'var(--color-text-primary)',
+  textS:  'var(--color-text-secondary)',
+  textT:  'var(--color-text-tertiary)',
+  bg:     'var(--color-background-primary)',
+  bgS:    'var(--color-background-secondary)',
+  bdr:    'var(--color-border-tertiary)',
+  grid:   dk ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.05)',
+  red:    dk ? '#F09595' : '#A32D2D',
+};
+const vRed = dk ? '#F09595' : '#E24B4A';
+
+const dat = {
+  em: [
+    {l:'Batu Bara',v:62.5,c:dk?'#888780':'#444441'},
+    {l:'Gas Alam', v:22.2,c:dk?'#5F5E5A':'#888780'},
+    {l:'Minyak',   v:9.7, c:dk?'#444441':'#B4B2A9'},
+    {l:'EBT',      v:5.6, c:C.green}
+  ],
+  coal:[
+    {n:'China',    v:4402.5,hi:false},
+    {n:'India',    v:1012.9,hi:false},
+    {n:'Indonesia',v:836.13,hi:true}
+  ],
+  prov:[
+    {n:'Kalimantan Timur', s:'Kaltim', jobs:490251,gdp:45.79,ikt:1.00,gj:2581769},
+    {n:'Sumatera Selatan', s:'Sumsel', jobs:474702,gdp:26.42,ikt:0.74,gj:3140404},
+    {n:'Kalimantan Selatan',s:'Kalsel',jobs:276866,gdp:37.63,ikt:0.65,gj:2170297},
+    {n:'Kalimantan Tengah', s:'Kalteng',jobs:315560,gdp:13.23,ikt:0.39,gj:97026},
+    {n:'Jambi',             s:'Jambi', jobs:58509, gdp:6.02, ikt:0.00,gj:470547}
+  ],
+  spklu:[
+    {r:'Pulau Jawa',            v:50620},
+    {r:'Sumatera',              v:4826},
+    {r:'Bali & Nusa Tenggara',  v:3142},
+    {r:'Sulawesi, Maluku, Papua',v:2373},
+    {r:'Kalimantan',            v:1957}
+  ]
+};
+
+const W=560,H=360,ml=95,mr=85,mt=46,mb=44,iw=W-ml-mr,ih=H-mt-mb;
+const mc = d3.select('#mc');
+
+const gE = mc.append('g').style('opacity',0);
+const gC = mc.append('g').style('opacity',0);
+const gJ = mc.append('g').style('opacity',0);
+const gV = mc.append('g').style('opacity',0);
+const gS = mc.append('g').style('opacity',0);
+const allG = [gE,gC,gJ,gV,gS];
+const stepToG = {0:gE,1:gC,2:gC,3:gJ,4:gJ,5:gV,6:gS,7:gS};
+const stepLabels = {
+  0:'Bauran Listrik Indonesia, 2022',
+  1:'Produksi Batu Bara Global, 2024',
+  2:'Produksi Batu Bara Global, 2024',
+  3:'Proyeksi Kehilangan Pekerjaan',
+  4:'Proyeksi Kehilangan Pekerjaan',
+  5:'Indeks Kerentanan Transisi (IKT)',
+  6:'Target SPKLU 2030 per Wilayah',
+  7:'Target SPKLU 2030 per Wilayah'
+};
+const lbl = document.getElementById('chart-label');
+
+function fade(g, stepNum) {
+  allG.forEach(x => x.transition().duration(480).style('opacity', x===g ? 1 : 0));
+  lbl.textContent = stepLabels[stepNum] || '';
+}
+
+(function drawEnergy(){
+  const cx=W/2, cy=H/2+5;
+  const pie = d3.pie().value(d=>d.v).sort(null);
+  const arc = d3.arc().innerRadius(70).outerRadius(125);
+  gE.selectAll('path').data(pie(dat.em)).join('path')
+    .attr('transform',`translate(${cx},${cy})`)
+    .attr('d',arc).attr('fill',d=>d.data.c)
+    .attr('stroke',C.bg).attr('stroke-width',2.5);
+  gE.append('text').attr('x',cx).attr('y',cy-4)
+    .attr('text-anchor','middle').attr('font-size','28px')
+    .attr('font-weight','500').attr('fill',C.textP).text('62,5%');
+  gE.append('text').attr('x',cx).attr('y',cy+18)
+    .attr('text-anchor','middle').attr('font-size','11px')
+    .attr('fill',C.textS).text('dari batu bara');
+  dat.em.forEach((d,i)=>{
+    const lx=18,ly=16+i*22;
+    gE.append('rect').attr('x',lx).attr('y',ly).attr('width',10)
+      .attr('height',10).attr('rx',2).attr('fill',d.c);
+    gE.append('text').attr('x',lx+15).attr('y',ly+9)
+      .attr('font-size','11.5px').attr('fill',C.textS).text(`${d.l}  ${d.v}%`);
+  });
+})();
+
+(function drawCoal(){
+  const g=gC.append('g').attr('transform',`translate(${ml},${mt})`);
+  const x=d3.scaleLinear().domain([0,4700]).range([0,iw]);
+  const y=d3.scaleBand().domain(dat.coal.map(d=>d.n)).range([0,ih]).padding(0.38);
+  [1000,2000,3000,4000].forEach(v=>{
+    g.append('line').attr('x1',x(v)).attr('x2',x(v)).attr('y1',0).attr('y2',ih)
+      .attr('stroke',C.grid).attr('stroke-dasharray','4 3');
+    g.append('text').attr('x',x(v)).attr('y',ih+18).attr('text-anchor','middle')
+      .attr('font-size','10px').attr('fill',C.textT).text(`${v/1000}k`);
+  });
+  g.selectAll('.bg').data(dat.coal).join('rect')
+    .attr('x',0).attr('y',d=>y(d.n)).attr('width',iw).attr('height',y.bandwidth())
+    .attr('fill',C.bgS).attr('rx',3);
+  g.selectAll('.b').data(dat.coal).join('rect')
+    .attr('x',0).attr('y',d=>y(d.n)).attr('width',d=>x(d.v)).attr('height',y.bandwidth())
+    .attr('fill',d=>d.hi?C.green:C.grnLt).attr('rx',3);
+  g.selectAll('.cn').data(dat.coal).join('text')
+    .attr('x',-9).attr('y',d=>y(d.n)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('text-anchor','end').attr('font-size','13px')
+    .attr('font-weight',d=>d.hi?'500':'400')
+    .attr('fill',d=>d.hi?C.textP:C.textS).text(d=>d.n);
+  g.selectAll('.cv').data(dat.coal).join('text')
+    .attr('x',d=>x(d.v)+8).attr('y',d=>y(d.n)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('font-size','12px').attr('fill',C.textS)
+    .text(d=>`${d.v.toLocaleString('id-ID')} juta ton`);
+})();
+
+(function drawJobs(){
+  const cx=W/2, cy=H/2;
+  gJ.append('text').attr('x',cx).attr('y',cy-82).attr('text-anchor','middle')
+    .attr('font-size','38px').attr('font-weight','500').attr('fill',C.textP).text('1,61 juta');
+  gJ.append('text').attr('x',cx).attr('y',cy-50).attr('text-anchor','middle')
+    .attr('font-size','11.5px').attr('fill',C.textS).text('pekerjaan di sektor batubara terancam');
+  gJ.append('text').attr('x',cx).attr('y',cy-30).attr('text-anchor','middle')
+    .attr('font-size','9.5px').attr('fill',C.textT).text('Analisis IRIO-BPS · IISD, 2025');
+  gJ.append('line').attr('x1',cx-52).attr('x2',cx+52).attr('y1',cy-14).attr('y2',cy-14)
+    .attr('stroke','var(--color-border-secondary)').attr('stroke-width',0.5);
+  gJ.append('text').attr('x',cx).attr('y',cy+10).attr('text-anchor','middle')
+    .attr('font-size','28px').attr('fill',C.textS).text('+ 1,5 juta');
+  gJ.append('text').attr('x',cx).attr('y',cy+34).attr('text-anchor','middle')
+    .attr('font-size','11.5px').attr('fill',C.textS).text('pekerjaan otomotif konvensional terancam');
+  gJ.append('line').attr('x1',cx-64).attr('x2',cx+64).attr('y1',cy+58).attr('y2',cy+58)
+    .attr('stroke','var(--color-border-secondary)').attr('stroke-width',0.5);
+  gJ.append('text').attr('x',cx).attr('y',cy+85).attr('text-anchor','middle')
+    .attr('font-size','15px').attr('font-weight','500').attr('fill',C.red)
+    .text('> 3 juta lapangan kerja berisiko');
+})();
+
+(function drawVuln(){
+  const g=gV.append('g').attr('transform',`translate(${ml},${mt})`);
+  const cSc=d3.scaleLinear().domain([0,0.5,1]).range(['#C0DD97','#FAC775',vRed]);
+  const x=d3.scaleLinear().domain([0,1.08]).range([0,iw]);
+  const y=d3.scaleBand().domain(dat.prov.map(d=>d.s)).range([0,ih]).padding(0.35);
+  g.selectAll('.bg').data(dat.prov).join('rect')
+    .attr('x',0).attr('y',d=>y(d.s)).attr('width',iw).attr('height',y.bandwidth())
+    .attr('fill',C.bgS).attr('rx',3);
+  g.selectAll('.vb').data(dat.prov).join('rect')
+    .attr('x',0).attr('y',d=>y(d.s)).attr('width',d=>x(d.ikt)).attr('height',y.bandwidth())
+    .attr('fill',d=>cSc(d.ikt)).attr('rx',3);
+  g.selectAll('.vs').data(dat.prov).join('text')
+    .attr('x',-9).attr('y',d=>y(d.s)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('text-anchor','end').attr('font-size','12.5px').attr('fill',C.textP).text(d=>d.s);
+  g.selectAll('.vv').data(dat.prov).join('text')
+    .attr('x',iw+7).attr('y',d=>y(d.s)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('font-size','11px').attr('fill',C.textS)
+    .text(d=>`IKT ${d.ikt.toFixed(2)}  ·  −${d.gdp}%`);
+})();
+
+(function drawSpkluSticky(){
+  const g=gS.append('g').attr('transform',`translate(${ml},${mt})`);
+  const tot=d3.sum(dat.spklu,d=>d.v);
+  const x=d3.scaleLinear().domain([0,55000]).range([0,iw]);
+  const y=d3.scaleBand().domain(dat.spklu.map(d=>d.r)).range([0,ih]).padding(0.35);
+  g.selectAll('.sbg').data(dat.spklu).join('rect')
+    .attr('x',0).attr('y',d=>y(d.r)).attr('width',iw).attr('height',y.bandwidth())
+    .attr('fill',C.bgS).attr('rx',3);
+  g.selectAll('.sb').data(dat.spklu).join('rect')
+    .attr('x',0).attr('y',d=>y(d.r)).attr('width',d=>x(d.v)).attr('height',y.bandwidth())
+    .attr('fill',d=>d.r==='Pulau Jawa'?C.green:C.grnLt).attr('rx',3);
+  g.selectAll('.sr').data(dat.spklu).join('text')
+    .attr('x',-9).attr('y',d=>y(d.r)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('text-anchor','end').attr('font-size','11px')
+    .attr('font-weight',d=>d.r==='Pulau Jawa'?'500':'400').attr('fill',C.textP)
+    .text(d=>d.r==='Sulawesi, Maluku, Papua'?'Sul., Maluku, Papua':d.r);
+  g.selectAll('.sv').data(dat.spklu).join('text')
+    .attr('x',d=>x(d.v)+7).attr('y',d=>y(d.r)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('font-size','11px').attr('fill',C.textS)
+    .text(d=>`${Math.round(d.v/tot*100)}%`);
+})();
+
+fade(gE, 0);
+
+let cur=-1;
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=+e.target.dataset.step;
+      if(s!==cur){
+        if(cur>=0) document.querySelectorAll('.sc')[cur]?.classList.remove('active');
+        cur=s;
+        document.querySelectorAll('.sc')[s]?.classList.add('active');
+        fade(stepToG[s], s);
+      }
+    }
+  });
+},{rootMargin:'-38% 0px -38% 0px',threshold:0});
+document.querySelectorAll('.step').forEach(el=>obs.observe(el));
+
+const ikCsc=d3.scaleLinear().domain([0,0.5,1]).range(['#C0DD97','#FAC775',vRed]);
+
+function drawPC(){
+  const el=document.getElementById('pc');
+  const cw=el.parentElement.clientWidth||600;
+  const h=265,mL=142,mR=125,mT=16,mB=38;
+  const ciw=cw-mL-mR,cih=h-mT-mB;
+  const s2=d3.select(el).attr('width',cw).attr('height',h);
+  s2.selectAll('*').remove();
+  const g=s2.append('g').attr('transform',`translate(${mL},${mT})`);
+  const x=d3.scaleLinear().domain([0,540000]).range([0,ciw]);
+  const y=d3.scaleBand().domain(dat.prov.map(d=>d.n)).range([0,cih]).padding(0.35);
+  [100,200,300,400,500].forEach(v=>{
+    const xv=x(v*1000);
+    g.append('line').attr('x1',xv).attr('x2',xv).attr('y1',0).attr('y2',cih)
+      .attr('stroke',C.grid).attr('stroke-dasharray','3 3');
+    g.append('text').attr('x',xv).attr('y',cih+16).attr('text-anchor','middle')
+      .attr('font-size','9.5px').attr('fill',C.textT).text(`${v}rb`);
+  });
+  g.selectAll('.bg').data(dat.prov).join('rect')
+    .attr('x',0).attr('y',d=>y(d.n)).attr('width',ciw).attr('height',y.bandwidth())
+    .attr('fill',C.bgS).attr('rx',3);
+  g.selectAll('.b').data(dat.prov).join('rect')
+    .attr('x',0).attr('y',d=>y(d.n)).attr('width',d=>x(d.jobs)).attr('height',y.bandwidth())
+    .attr('fill',d=>ikCsc(d.ikt)).attr('rx',3);
+  g.selectAll('.nm').data(dat.prov).join('text')
+    .attr('x',-8).attr('y',d=>y(d.n)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('text-anchor','end').attr('font-size','11.5px').attr('fill',C.textP).text(d=>d.n);
+  g.selectAll('.vl').data(dat.prov).join('text')
+    .attr('x',ciw+8).attr('y',d=>y(d.n)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('font-size','10.5px').attr('fill',C.textS)
+    .text(d=>`${Math.round(d.jobs/1000)}rb · IKT ${d.ikt.toFixed(2)}`);
+  const defs=s2.append('defs');
+  const gr=defs.append('linearGradient').attr('id','pgr').attr('x1','0%').attr('x2','100%').attr('y1','0%').attr('y2','0%');
+  gr.append('stop').attr('offset','0%').attr('stop-color','#C0DD97');
+  gr.append('stop').attr('offset','50%').attr('stop-color','#FAC775');
+  gr.append('stop').attr('offset','100%').attr('stop-color',vRed);
+  const lg=s2.append('g').attr('transform',`translate(${mL},${h-mB+18})`);
+  lg.append('rect').attr('width',80).attr('height',4.5).attr('rx',2.25).attr('fill','url(#pgr)');
+  lg.append('text').attr('y',14).attr('font-size','9.5px').attr('fill',C.textT).text('Rentan rendah');
+  lg.append('text').attr('x',80).attr('y',14).attr('text-anchor','end').attr('font-size','9.5px').attr('fill',C.textT).text('Sangat rentan');
+}
+
+function drawSC(){
+  const el=document.getElementById('sc2');
+  const cw=el.parentElement.clientWidth||600;
+  const h=215,mL=185,mR=90,mT=16,mB=22;
+  const ciw=cw-mL-mR,cih=h-mT-mB;
+  const tot=d3.sum(dat.spklu,d=>d.v);
+  const s2=d3.select(el).attr('width',cw).attr('height',h);
+  s2.selectAll('*').remove();
+  const g=s2.append('g').attr('transform',`translate(${mL},${mT})`);
+  const x=d3.scaleLinear().domain([0,55000]).range([0,ciw]);
+  const y=d3.scaleBand().domain(dat.spklu.map(d=>d.r)).range([0,cih]).padding(0.35);
+  g.selectAll('.bg').data(dat.spklu).join('rect')
+    .attr('x',0).attr('y',d=>y(d.r)).attr('width',ciw).attr('height',y.bandwidth())
+    .attr('fill',C.bgS).attr('rx',3);
+  g.selectAll('.b').data(dat.spklu).join('rect')
+    .attr('x',0).attr('y',d=>y(d.r)).attr('width',d=>x(d.v)).attr('height',y.bandwidth())
+    .attr('fill',d=>d.r==='Pulau Jawa'?C.green:C.grnLt).attr('rx',3);
+  g.selectAll('.rg').data(dat.spklu).join('text')
+    .attr('x',-8).attr('y',d=>y(d.r)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('text-anchor','end').attr('font-size','11.5px')
+    .attr('font-weight',d=>d.r==='Pulau Jawa'?'500':'400').attr('fill',C.textP).text(d=>d.r);
+  g.selectAll('.vl').data(dat.spklu).join('text')
+    .attr('x',d=>x(d.v)+8).attr('y',d=>y(d.r)+y.bandwidth()/2).attr('dy','0.35em')
+    .attr('font-size','11px').attr('fill',C.textS)
+    .text(d=>`${d.v.toLocaleString('id-ID')} (${Math.round(d.v/tot*100)}%)`);
+}
+
+function init(){drawPC();drawSC();}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+else requestAnimationFrame(()=>setTimeout(init,60));
+window.addEventListener('resize',()=>{drawPC();drawSC();});
+</script>
