@@ -36,10 +36,10 @@
   </div>
 
   <div class="opening">
-    <p class="kicker">SATRIA DATA 2026 · Statistics Infographic Competition</p>
+    <p class="kicker">Farand Diy Dat Mahazalfaa · Metode Visualisasi Data</p>
     <h1 class="big-title">Dibalik Bayang-Bayang Transisi</h1>
-    <p class="lead">Menelusuri jejak manfaat dan bayang-bayang yang ditinggalkan transisi energi Indonesia — serta siapa yang sesungguhnya menanggung bebannya.</p>
-    <p class="scroll-hint">Gulir ke bawah untuk memulai narasi</p>
+    <p class="lead">Menelusuri jejak manfaat dan bayang-bayang yang ditinggalkan transisi energi Indonesia. Siapa yang sesungguhnya menanggung bebannya?</p>
+    <p class="scroll-hint">Scroll down to start.</p>
   </div>
 
   <div class="scrolly">
@@ -104,7 +104,7 @@
 
   <div class="sol">
     <div class="inn">
-      <h2>Dari bayang-bayang menuju cahaya</h2>
+      <h2>Solusi dari bayang-bayang menuju Keadilan: Just Energy Transition</h2>
       <p class="sub">Tiga pilar transisi energi yang berkeadilan (just transition)</p>
       <div class="pils">
         <div class="pil">
@@ -123,13 +123,13 @@
       <div class="poff">
         <p class="pl">Proyeksi Skenario 3 — Green Sector Stimulus · IISD, 2025</p>
         <p class="pn">1,61 juta pekerjaan hilang → 8,46 juta pekerjaan hijau baru</p>
-        <p class="ps">Rasio 1 : 5,2 — setiap 1 pekerjaan tambang yang hilang, 5 pekerjaan hijau bisa tercipta dengan stimulus yang tepat</p>
+        <p class="ps">Setiap 1 pekerjaan tambang yang hilang, 5 pekerjaan hijau bisa tercipta dengan stimulus yang tepat</p>
       </div>
     </div>
   </div>
 
   <div class="srcs">
-    <strong>Sumber data:</strong> IISD (Nov 2025) Coal Transition Impacts Indonesia (IRIO-BPS) · Kepmen ESDM No. 24K/2025 Roadmap SPKLU 2025-2030 · CREA-CELIOS (Apr 2026) Nikel Indonesia · Analisis Strategis Transisi Industri Otomotif Indonesia (2025) · Kementerian ESDM RI & CNBC Indonesia (RUPTL 2025-2034)
+    <strong>Sumber data:</strong> IISD (Nov 2025) Coal Transition Impacts Indonesia (IRIO-BPS) · Kepmen ESDM No. 24K/2025 Roadmap SPKLU 2025-2030 · CREA-CELIOS (Apr 2026) Nikel Indonesia · Kementerian ESDM RI & CNBC Indonesia (RUPTL 2025-2034)
   </div>
 </div>
 
@@ -171,10 +171,10 @@
     font-weight: 500;
   }
   
-  /* --- NAVIGATION RAIL (INDIKATOR SAMPING) --- */
+  /* --- NAVIGATION RAIL (INDIKATOR SAMPING MOBILE DEFAULT) --- */
   .navigation-rail { 
     position: fixed; 
-    left: 2rem; 
+    left: 1.5rem; 
     top: 50%; 
     transform: translateY(-50%); 
     display: flex; 
@@ -194,7 +194,7 @@
     transform: scale(1.8); 
   }
 
-  /* --- SCROLLYTELLING FRAMEWORK (MOBILE DEFAULT) --- */
+  /* --- SCROLLYTELLING FRAMEWORK --- */
   .scrolly { 
     position: relative; 
     width: 100%;
@@ -207,7 +207,7 @@
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    background: var(--color-background-primary); 
+    background: transparent; 
     z-index: 1; 
     overflow: hidden; 
   }
@@ -249,22 +249,21 @@
     pointer-events: none; 
   }
   
-  /* Menarik kartu teks pertama ke posisi atas sejajar dengan infografis awal */
   .step:nth-of-type(1) {
     margin-top: -100vh;
   }
 
   .sc { 
-    background: rgba(247, 249, 246, 0.85); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); 
+    background: rgba(255, 255, 255, 0.88); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
     border: 1px solid var(--color-border-tertiary); 
     border-radius: var(--border-radius-lg); 
     padding: 1.5rem; 
     width: 100%;
     max-width: 320px; 
     pointer-events: all; 
-    transition: all 0.4s ease; 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     opacity: 0.2; 
     transform: translateY(15px); 
   }
@@ -401,7 +400,7 @@
   .srcs { 
     padding: 3rem 2rem; 
     font-size: 11px; 
-    color: var(--color-text-tertiary); 
+    color: var(--text-t); 
     line-height: 2; 
     border-top: 1px solid var(--color-border-tertiary); 
     text-align: center; 
@@ -409,18 +408,22 @@
     margin: 0 auto; 
   }
 
-  /* --- PERBAIKAN UTAMA: OVERRIDE DESKTOP SPLIT-SCREEN (LAPISAN BERSIH) --- */
+  /* --- PERBAIKAN TOTAL DESKTOP LAYOUT (SPLIT SCREEN & ANTITABRAKAN) --- */
   @media (min-width: 1024px) {
     .scrolly {
       max-width: 1300px;
       margin: 0 auto;
     }
 
-    /* Memaksa visualisasi menetap di lajur kanan (60% lebar layar) */
+    /* Memaksa indikator navigasi samping terkunci dinamis di sisi luar kiri teks */
+    .navigation-rail {
+      left: calc((100vw - 1300px) / 2 + 1.5rem);
+    }
+
+    /* Mempersempit porsi grafik jadi 54% untuk memperlebar jalur aman tengah */
     .sticky-g {
-      width: 60%;
+      width: 54%;
       margin-left: auto;
-      background: transparent; /* Mencegah penutupan lajur teks kiri */
     }
 
     .chart-wrapper {
@@ -428,38 +431,37 @@
       padding: 0 1rem;
     }
 
-    /* Memaksa jalur teks cerita tetap berada di lajur kiri (40% lebar layar) */
+    /* Memperluas lajur teks jadi 46% dan menambah jarak aman dari sisi indikator */
     .step {
-      width: 40%;
+      width: 46%;
       justify-content: flex-start;
-      padding-left: 3rem;
+      padding-left: 4.5rem;
       padding-right: 0;
     }
 
-    /* Modifikasi boks teks agar lebih kontras di atas latar belakang transparan */
     .sc {
-      max-width: 350px;
+      max-width: 330px;
       background: rgba(255, 255, 255, 0.92);
-      border-color: var(--color-border-secondary);
-    }
-
-    :global(.theme-dark) .sc {
-      background: rgba(18, 24, 20, 0.92);
-    }
-    
-    .navigation-rail {
-      left: 3rem;
     }
   }
 
-  /* --- ATURAN BARU: HIGH-FIDELITY TEXTURE BACKDROP --- */
+  /* Pengaman tambahan untuk layar desktop berukuran mepet (1024px - 1340px) */
+  @media (min-width: 1024px) and (max-width: 1340px) {
+    .navigation-rail {
+      left: 1rem;
+    }
+    .step {
+      padding-left: 3.5rem;
+    }
+  }
+
+  /* --- HIGH-FIDELITY TEXTURE BACKDROP --- */
   #story {
     position: relative;
     min-height: 100vh;
     z-index: 1;
   }
 
-  /* Membuat lapisan foto menetap di bawah seluruh elemen scrollytelling */
   #story::before {
     content: "";
     position: fixed;
@@ -471,22 +473,16 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Mengunci opasitas sangat rendah (7%) agar hanya bertindak sebagai tekstur,
-       sehingga tidak menubruk warna grafik batang D3 atau boks teks cerita */
     opacity: 0.07; 
-    
-    /* Mengunci lapisan agar berada di paling bawah dan tidak memblokir sensor hover kursor */
     z-index: -1; 
     pointer-events: none; 
     transition: opacity 0.3s ease;
   }
 
-  /* Penyesuaian otomatis untuk mendistorsi cahaya saat user berada di dark mode */
   @media (prefers-color-scheme: dark) {
     #story::before {
-      opacity: 0.04; /* Lebih redup di mode gelap agar warna neon grafik menyala */
-      filter: grayscale(100%) invert(100%); /* Membalikkan komponen warna jepretan */
+      opacity: 0.04; 
+      filter: grayscale(100%) invert(100%);
     }
   }
 </style>
