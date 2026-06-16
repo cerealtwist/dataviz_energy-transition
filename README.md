@@ -2,6 +2,8 @@
 
 Repositori ini berisi kode sumber untuk karya cerita data interaktif (scrollytelling) yang diajukan dalam Statistics Infographic Competition (SIC) pada Satria Data 2026. Proyek ini memetakan paradoks spasial dan ketenagakerjaan dalam agenda transisi energi di Indonesia (Just Energy Transition).
 
+## Link bisa diakses di: https://dataviz-energy-transition.vercel.app/
+
 ## Deskripsi Latar Belakang
 
 Transisi menuju energi bersih menciptakan tantangan asimetris antarwilayah di Indonesia. Di satu sisi, wilayah hulu penghasil energi fosil seperti Kalimantan Timur dan Sumatera Selatan menghadapi risiko kehilangan ratusan ribu lapangan kerja akibat penghentian bertahap (phase-out) batubara. Di sisi lain, wilayah hilir seperti Pulau Jawa justru memanen sebagian besar investasi hijau, pabrik baterai, perakitan kendaraan listrik (EV), serta alokasi infrastruktur seperti SPKLU. 
