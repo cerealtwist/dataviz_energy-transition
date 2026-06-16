@@ -1,42 +1,45 @@
-# sv
+# Dibalik Bayang-Bayang Transisi: Cerita Data Interaktif Transisi Energi Indonesia
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Repositori ini berisi kode sumber untuk karya cerita data interaktif (scrollytelling) yang diajukan dalam Statistics Infographic Competition (SIC) pada Satria Data 2026. Proyek ini memetakan paradoks spasial dan ketenagakerjaan dalam agenda transisi energi di Indonesia (Just Energy Transition).
 
-## Creating a project
+## Deskripsi Latar Belakang
 
-If you're seeing this, you've probably already done this step. Congrats!
+Transisi menuju energi bersih menciptakan tantangan asimetris antarwilayah di Indonesia. Di satu sisi, wilayah hulu penghasil energi fosil seperti Kalimantan Timur dan Sumatera Selatan menghadapi risiko kehilangan ratusan ribu lapangan kerja akibat penghentian bertahap (phase-out) batubara. Di sisi lain, wilayah hilir seperti Pulau Jawa justru memanen sebagian besar investasi hijau, pabrik baterai, perakitan kendaraan listrik (EV), serta alokasi infrastruktur seperti SPKLU. 
 
-```sh
-# create a new project
-npx sv create my-app
-```
+Karya interaktif ini dirancang untuk memetakan ketimpangan tersebut secara objektif berbasis data, sekaligus menawarkan tiga pilar solusi transisi yang berkeadilan.
 
-To recreate this project with the same configuration:
+## Fitur Utama Aplikasi
 
-```sh
-# recreate this project
-npx sv@0.16.1 create --template minimal --no-types --no-install ./
-```
+1. Scrollytelling Sinkron: Narasi teks yang bergerak sensitif terhadap posisi gulir (scroll) pengguna, yang secara reaktif memicu transisi komponen grafik di latar belakang menggunakan Intersection Observer.
+2. Unified Scrollytelling Canvas: Perpindahan antar-grafik berjalan mulus menggunakan efek crossfade asli Svelte 5 tanpa jeda rendering.
+3. Komparasi Data Interaktif: Setiap grafik (Donut Chart Bauran Listrik, Bar Chart Produksi Global, Bar Chart IKT Provinsi, dan Target SPKLU) dilengkapi dengan hit-zone hover dan floating glassmorphism tooltip untuk melihat metrik secara presisi.
+4. Desain Responsif Kontemporer: Antarmuka minimalis yang memanfaatkan tipografi Plus Jakarta Sans dengan optimasi ukuran grafik otomatis (responsive window resizing).
 
-## Developing
+## Metodologi Statistik: Indeks Kerentanan Transisi (IKT)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Untuk mengukur tingkat kerentanan daerah hulu, proyek ini mengintegrasikan metode statistik eksplisit berupa Indeks Kerentanan Transisi (IKT) menggunakan normalisasi Min-Max Scaling dengan bobot berimbang:
 
-```sh
-npm run dev
+IKT = (0.5 * Skor PDRB) + (0.5 * Skor Tenaga Kerja)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+* Skor PDRB: Diambil dari proyeksi kontraksi output ekonomi jika tambang ditutup.
+* Skor Tenaga Kerja: Diambil dari estimasi jumlah pemutusan hubungan kerja langsung dan tidak langsung.
+* Skala Output: Berada pada rentang 0.00 (Relatif Tangguh) hingga 1.00 (Sangat Rentan).
 
-## Building
+## Struktur Direktori Proyek
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```text
+my-satria-data-viz/
+├── src/
+│   ├── lib/
+│   │   ├── data/
+│   │   │   └── transitionData.js       # Data kuantitatif & draf narasi langkah
+│   │   └── components/
+│   │       ├── DonutChart.svelte       # Visualisasi bauran listrik nasional
+│   │       ├── BarChartCoal.svelte     # Visualisasi skala produksi global
+│   │       ├── BarChartIkt.svelte      # Visualisasi indeks kerentanan provinsi
+│   │       └── BarChartSpklu.svelte    # Visualisasi target sebaran SPKLU 2030
+│   └── routes/
+│       ├── +layout.svelte              # Pengaturan style global & tema warna
+│       └── +page.svelte                # Konfigurasi scrollytelling & observer
+├── package.json
+└── svelte.config.js

@@ -134,47 +134,359 @@
 </div>
 
 <style>
-  .opening { padding: 4rem 2rem 2rem; max-width: 600px; margin: 0 auto; text-align: center; }
-  .kicker { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: .8rem; }
-  .big-title { font-size: 36px; font-weight: 700; line-height: 1.2; margin: .5rem 0; color: var(--text-p); }
-  .lead { font-size: 15px; line-height: 1.7; color: var(--color-text-secondary); margin-top: 1rem; }
-  .scroll-hint { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2rem; letter-spacing: .05em; }
+  /* --- LAYOUT UTAMA & OPENING --- */
+  .opening { 
+    padding: 6rem 2rem 4rem; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    text-align: center; 
+  }
+  .kicker { 
+    font-size: 11px; 
+    letter-spacing: .15em; 
+    text-transform: uppercase; 
+    color: var(--color-text-tertiary); 
+    margin-bottom: .8rem; 
+    font-weight: 600;
+  }
+  .big-title { 
+    font-size: 40px; 
+    font-weight: 800; 
+    line-height: 1.2; 
+    margin: .5rem 0; 
+    color: var(--text-p); 
+    letter-spacing: -0.03em;
+  }
+  .lead { 
+    font-size: 16px; 
+    line-height: 1.7; 
+    color: var(--color-text-secondary); 
+    margin-top: 1.2rem; 
+  }
+  .scroll-hint { 
+    font-size: 11px; 
+    color: var(--color-text-tertiary); 
+    margin-top: 2.5rem; 
+    letter-spacing: .05em; 
+    font-weight: 500;
+  }
   
-  .navigation-rail { position: fixed; left: 2.5rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px; z-index: 10; }
-  .nav-dot { width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-border-secondary); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  .nav-dot.active { background-color: var(--green); transform: scale(1.6); }
+  /* --- NAVIGATION RAIL (INDIKATOR SAMPING) --- */
+  .navigation-rail { 
+    position: fixed; 
+    left: 2rem; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px; 
+    z-index: 10; 
+  }
+  .nav-dot { 
+    width: 6px; 
+    height: 6px; 
+    border-radius: 50%; 
+    background-color: var(--color-border-secondary); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  }
+  .nav-dot.active { 
+    background-color: var(--green); 
+    transform: scale(1.8); 
+  }
 
-  .scrolly { position: relative; }
-  .sticky-g { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-background-primary); z-index: 1; overflow: hidden; }
-  .chart-wrapper { width: 100%; max-width: 560px; height: 360px; position: relative; }
-  .canvas-layer { position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; align-items: center; justify-content: center; }
-  .chart-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1.5rem; text-align: center; font-weight: 500; z-index: 2; }
+  /* --- SCROLLYTELLING FRAMEWORK (MOBILE DEFAULT) --- */
+  .scrolly { 
+    position: relative; 
+    width: 100%;
+  }
+  .sticky-g { 
+    position: sticky; 
+    top: 0; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background: var(--color-background-primary); 
+    z-index: 1; 
+    overflow: hidden; 
+  }
+  .chart-wrapper { 
+    width: 100%; 
+    max-width: 560px; 
+    height: 360px; 
+    position: relative; 
+  }
+  .canvas-layer { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .chart-label { 
+    font-size: 11px; 
+    letter-spacing: .12em; 
+    text-transform: uppercase; 
+    color: var(--color-text-tertiary); 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
+    font-weight: 600; 
+    z-index: 2; 
+  }
   
-  .step { height: 100vh; display: flex; align-items: center; padding: 0 2rem; position: relative; z-index: 2; pointer-events: none; max-width: 1100px; margin: 0 auto; }
-  .sc { background: rgba(247, 249, 246, 0.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; width: 320px; pointer-events: all; transition: all 0.4s ease; opacity: 0.25; transform: translateY(10px); }
-  .sc.active { opacity: 1; transform: translateY(0); box-shadow: 0 15px 35px rgba(0,0,0,0.04); border-color: var(--color-border-secondary); }
-  .sc .n { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: .6rem; font-weight: 500; }
-  .sc p { font-size: 13.5px; line-height: 1.7; color: var(--color-text-primary); }
-  :global(.sc .em) { font-weight: 600; color: var(--green); }
+  .step { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 0 1.5rem; 
+    position: relative; 
+    z-index: 2; 
+    pointer-events: none; 
+  }
   
-  .prose { padding: 4rem 2rem 1rem; max-width: 650px; margin: 0 auto; text-align: center; }
-  .prose h2 { font-size: 20px; font-weight: 600; margin-bottom: .5rem; color: var(--text-p); }
-  .prose .sub { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
-  .cw { padding: 1rem 2rem 3rem; max-width: 900px; margin: 0 auto; }
+  /* Menarik kartu teks pertama ke posisi atas sejajar dengan infografis awal */
+  .step:nth-of-type(1) {
+    margin-top: -100vh;
+  }
+
+  .sc { 
+    background: rgba(247, 249, 246, 0.85); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid var(--color-border-tertiary); 
+    border-radius: var(--border-radius-lg); 
+    padding: 1.5rem; 
+    width: 100%;
+    max-width: 320px; 
+    pointer-events: all; 
+    transition: all 0.4s ease; 
+    opacity: 0.2; 
+    transform: translateY(15px); 
+  }
+  .sc.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06); 
+    border-color: var(--color-border-secondary); 
+  }
+  .sc .n { 
+    font-size: 10px; 
+    letter-spacing: .1em; 
+    text-transform: uppercase; 
+    color: var(--color-text-tertiary); 
+    margin-bottom: .6rem; 
+    font-weight: 600; 
+  }
+  .sc p { 
+    font-size: 13.5px; 
+    line-height: 1.7; 
+    color: var(--color-text-primary); 
+  }
+  :global(.sc .em) { 
+    font-weight: 700; 
+    color: var(--green); 
+  }
   
-  .sol { background: var(--color-background-secondary); padding: 4rem 2rem; margin-top: 2rem; }
-  .sol .inn { max-width: 750px; margin: 0 auto; }
-  .sol h2 { font-size: 22px; font-weight: 600; margin-bottom: .5rem; text-align: center; }
-  .sol .sub { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 2.5rem; text-align: center; }
-  .pils { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .pil { background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; transition: transform 0.3s ease; }
-  .pil:hover { transform: translateY(-4px); }
-  .pil .pt { font-size: 13px; font-weight: 600; margin-bottom: .6rem; color: var(--text-p); }
-  .pil .pp { font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.6; }
+  /* --- LAYOUT PROSE & SECTION BAWAH --- */
+  .prose { 
+    padding: 5rem 2rem 1rem; 
+    max-width: 650px; 
+    margin: 0 auto; 
+    text-align: center; 
+  }
+  .prose h2 { 
+    font-size: 22px; 
+    font-weight: 700; 
+    margin-bottom: .5rem; 
+    color: var(--text-p); 
+    letter-spacing: -0.02em;
+  }
+  .prose .sub { 
+    font-size: 13px; 
+    color: var(--color-text-secondary); 
+    line-height: 1.6; 
+  }
+  .cw { 
+    padding: 1rem 2rem 4rem; 
+    max-width: 900px; 
+    margin: 0 auto; 
+  }
   
-  .poff { margin-top: 2rem; background: #132b03; border-radius: var(--border-radius-lg); padding: 2rem; text-align: center; box-shadow: 0 10px 30px rgba(19,43,3,0.15); }
-  .poff .pl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #97C459; opacity: .8; margin-bottom: .6rem; }
-  .poff .pn { font-size: 20px; font-weight: 600; color: #C0DD97; margin-bottom: .4rem; }
-  .poff .ps { font-size: 12px; color: #97C459; opacity: 0.7; line-height: 1.5; }
-  .srcs { padding: 2rem; font-size: 10.5px; color: var(--color-text-tertiary); line-height: 2; border-top: 1px solid var(--color-border-tertiary); text-align: center; max-width: 900px; margin: 0 auto; }
+  .sol { 
+    background: var(--color-background-secondary); 
+    padding: 5rem 2rem; 
+    margin-top: 3rem; 
+  }
+  .sol .inn { 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  .sol h2 { 
+    font-size: 24px; 
+    font-weight: 700; 
+    margin-bottom: .5rem; 
+    text-align: center; 
+    letter-spacing: -0.02em;
+  }
+  .sol .sub { 
+    font-size: 13.5px; 
+    color: var(--color-text-secondary); 
+    margin-bottom: 3rem; 
+    text-align: center; 
+  }
+  .pils { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+  }
+  .pil { 
+    background: var(--color-background-primary); 
+    border: 1px solid var(--color-border-tertiary); 
+    border-radius: var(--border-radius-lg); 
+    padding: 1.75rem; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  }
+  .pil:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    border-color: var(--color-border-secondary);
+  }
+  .pil .pt { 
+    font-size: 14px; 
+    font-weight: 700; 
+    margin-bottom: .7rem; 
+    color: var(--text-p); 
+  }
+  .pil .pp { 
+    font-size: 12px; 
+    color: var(--color-text-secondary); 
+    line-height: 1.6; 
+  }
+  
+  .poff { 
+    margin-top: 3rem; 
+    background: #112503; 
+    border-radius: var(--border-radius-lg); 
+    padding: 2.5rem 2rem; 
+    text-align: center; 
+    box-shadow: 0 15px 35px rgba(17,37,3,0.2); 
+  }
+  .poff .pl { 
+    font-size: 10px; 
+    letter-spacing: .15em; 
+    text-transform: uppercase; 
+    color: #97C459; 
+    opacity: .8; 
+    margin-bottom: .8rem; 
+    font-weight: 600;
+  }
+  .poff .pn { 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: #C0DD97; 
+    margin-bottom: .5rem; 
+    letter-spacing: -0.02em;
+  }
+  .poff .ps { 
+    font-size: 12.5px; 
+    color: #97C459; 
+    opacity: 0.75; 
+    line-height: 1.6; 
+  }
+  .srcs { 
+    padding: 3rem 2rem; 
+    font-size: 11px; 
+    color: var(--color-text-tertiary); 
+    line-height: 2; 
+    border-top: 1px solid var(--color-border-tertiary); 
+    text-align: center; 
+    max-width: 900px; 
+    margin: 0 auto; 
+  }
+
+  /* --- PERBAIKAN UTAMA: OVERRIDE DESKTOP SPLIT-SCREEN (LAPISAN BERSIH) --- */
+  @media (min-width: 1024px) {
+    .scrolly {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* Memaksa visualisasi menetap di lajur kanan (60% lebar layar) */
+    .sticky-g {
+      width: 60%;
+      margin-left: auto;
+      background: transparent; /* Mencegah penutupan lajur teks kiri */
+    }
+
+    .chart-wrapper {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    /* Memaksa jalur teks cerita tetap berada di lajur kiri (40% lebar layar) */
+    .step {
+      width: 40%;
+      justify-content: flex-start;
+      padding-left: 3rem;
+      padding-right: 0;
+    }
+
+    /* Modifikasi boks teks agar lebih kontras di atas latar belakang transparan */
+    .sc {
+      max-width: 350px;
+      background: rgba(255, 255, 255, 0.92);
+      border-color: var(--color-border-secondary);
+    }
+
+    :global(.theme-dark) .sc {
+      background: rgba(18, 24, 20, 0.92);
+    }
+    
+    .navigation-rail {
+      left: 3rem;
+    }
+  }
+
+  /* --- ATURAN BARU: HIGH-FIDELITY TEXTURE BACKDROP --- */
+  #story {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+  }
+
+  /* Membuat lapisan foto menetap di bawah seluruh elemen scrollytelling */
+  #story::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/bg-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Mengunci opasitas sangat rendah (7%) agar hanya bertindak sebagai tekstur,
+       sehingga tidak menubruk warna grafik batang D3 atau boks teks cerita */
+    opacity: 0.07; 
+    
+    /* Mengunci lapisan agar berada di paling bawah dan tidak memblokir sensor hover kursor */
+    z-index: -1; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+  }
+
+  /* Penyesuaian otomatis untuk mendistorsi cahaya saat user berada di dark mode */
+  @media (prefers-color-scheme: dark) {
+    #story::before {
+      opacity: 0.04; /* Lebih redup di mode gelap agar warna neon grafik menyala */
+      filter: grayscale(100%) invert(100%); /* Membalikkan komponen warna jepretan */
+    }
+  }
 </style>
